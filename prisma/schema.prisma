@@ -1,0 +1,24 @@
+// generate client
+
+generator client {
+  provider = "primsa-client-js"
+}
+
+
+// datasoures
+datasource db {
+  provider = "mongodb"
+  url = env("DATABASE_URL")
+}
+
+// User Model
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  firstname String
+  lastname String
+  email String @unique
+  skills Json
+}
+
+// yarn prisma db push - (for start primsa client)

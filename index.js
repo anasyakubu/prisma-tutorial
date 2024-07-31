@@ -7,4 +7,15 @@ dotenv.config();
 
 const app = express();
 
+const PORT = process.env.PORT || 9000;
+
+// JSON data Model
+app.use(express.json());
+app.use(cookiesParser());
+app.use(cors());
+
+app.listen(PORT, () => {
+  console.log(`Server Listening on PORT ${PORT}`);
+});
+
 // console.log("Hello World");

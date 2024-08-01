@@ -18,4 +18,8 @@ app.listen(PORT, () => {
   console.log(`Server Listening on PORT ${PORT}`);
 });
 
-// console.log("Hello World");
+// specific routes
+
+// user routes
+
+app.use("/api/users", userRoutes);
